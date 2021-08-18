@@ -8,4 +8,5 @@ mbedtls_dep = declare_dependency(dependencies: c.find_library('mbedtls', dirs: j
 mbedx509_dep = declare_dependency(dependencies: c.find_library('mbedx509', dirs: join_paths(meson.current_source_dir(),'libs')),include_directories: ['include'])
 threads_dep = dependency('threads')
 
-executable('reqrep','reqrep.c', dependencies: [nng_dep,mbedcrypto_dep,mbedtls_dep,mbedx509_dep,threads_dep])
+executable('rep','src/rep.c', dependencies: [nng_dep,mbedcrypto_dep,mbedtls_dep,mbedx509_dep,threads_dep])
+executable('req','src/req.c', dependencies: [nng_dep,mbedcrypto_dep,mbedtls_dep,mbedx509_dep,threads_dep])
